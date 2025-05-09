@@ -1,0 +1,25 @@
+Metrix from hell
+
+Docker uses lxc containers
+The OS Kernel is responsible for interacting with the hardware but the software makes the OS different
+
+Docker Image
+It is a package or template that is used to create containers
+
+Docker Container
+They are running instances of iamges
+
+Docker Commands
+docker run container-name
+docker ps - list containers present
+docker ps -a - show all runing containers
+docker stop container_name/container_id
+docker rm - remove a container
+docker rmi- remove an image
+docker images- to view images present
+docker exec - to execute a command in a container
+docker pull - to pull an image from docker without running it
+docker run -it image_name bash - automatically log into the container and be in bash
+docker run -d image_name sleep 20 - Sleep for 20 seconds
+docker run --name webapp -d nginx:1.14-alpine - use to do this Run a container with the nginx:1.14-alpine
+ image and name it webapp
