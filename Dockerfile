@@ -1,7 +1,7 @@
 #  A Flask API in Docker
 # The Dockerfile tells Docker:
 
-# 🐍 “Use Python”
+# 🐍 “Use Python” (this creates the base os to start the image from)
 
 # 📦 “Install Flask”
 
