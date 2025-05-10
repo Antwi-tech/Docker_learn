@@ -7,10 +7,12 @@ Docker Image
 It is a package or template that is used to create containers
 
 Docker Container
-They are running instances of iamges
+They are running instances of images
 
-Docker Commands
+- SOME DOCKER Commands
+
 docker run container-name
+docker run container_name:version - This specifies the version of the image to pull which is called a tag
 docker ps - list containers present
 docker ps -a - show all runing containers
 docker stop container_name/container_id
@@ -23,3 +25,35 @@ docker run -it image_name bash - automatically log into the container and be in 
 docker run -d image_name sleep 20 - Sleep for 20 seconds
 docker run --name webapp -d nginx:1.14-alpine - use to do this Run a container with the nginx:1.14-alpine
  image and name it webapp
+docker run -d - Run in detahed mode
+docker attach  container_id - Run and see how the container is running q
+
+-HOW TO RUN STDIN(standard input)
+
+By default docker runs in a non-interactive mode to make it intractive to take input from user, we specify -i 
+using docker run, - docker run -i image_name
+
+to also make a prompt show , specify the -t create a pseudo terminal
+: docker run -it image_name 
+
+- RUN - PORT MAPPING
+To make the application accessible outside the container, we use 
+docker run -p 5000:5000 image_name
+the first number allows the user to specify multiple instances so the user can go to 192.168.1.5:port_instance_specified
+
+
+- HOW DATA IS PERISTED (Volume Mapping)
+docker run -v dir_to_map_to:dir/db_dir db_name
+This command, sves the data or backup the data in the container/ stores it in the dorectory you specified to 
+keep safe 
+
+To see additional info about a container- docker inspect container_name / id 
+To view logs of a container - docker logs container_id
+
+COMMANDS TO CREATE AN IMAGE AND PUSH TO DOCKER HUB
+Dockerfile- It is a file written in a pecific format that docker can understand. It comprises of instrutions and
+argument 
+docker build Dockerfile -t image_name
+docker push name_of_image
+
+To tag an image after building - docker build . -t tag_name
