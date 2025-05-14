@@ -57,3 +57,26 @@ docker build Dockerfile -t image_name
 docker push name_of_image
 
 To tag an image after building - docker build . -t tag_name
+
+TO check OS Information
+Pull and run the image with -it
+cat /etc/os-release or lsb_release -a
+or 
+docker image inspect python:3.6
+
+in docker bash, use vi Dockerfile to format a dockerfile
+
+
+ENVIRONMENT VARIABLE IN DOCKER
+- use env vairble in the app code after setting it in thecode, you can use it in the docker code
+color = os.environ.get('APP-COLOR')
+ 
+DOCKER code
+docker run -e env_name
+ image_name 
+docker run -e APP_COLOR=blue image_name 
+
+
+Another way to use env variables
+
+CMD, ARGUMENTS AND ENTRYPOINTS
