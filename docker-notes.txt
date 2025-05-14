@@ -80,3 +80,21 @@ docker run -e APP_COLOR=blue image_name
 Another way to use env variables
 
 CMD, ARGUMENTS AND ENTRYPOINTS
+CMD- passed default value if the vlaue was not specified during run time
+argument- processes to execute
+entrypoint- your start command 
+
+DOCKER COMPOSE
+Confugurations In yaml file
+
+Instead of running multiple instaces of different ctianers, a docker-compose.yml file is used to specify 
+differnt iamges for use. Changes are easily integrated witht the yml file
+
+--links is used to link 2 contianers together
+
+docekr-compose.yml is in the form of a json, dic or array . 
+
+yml
+1. version this specifies the version od docker compose you want to use
+2 services:  this is where all the docker images go and the network it mateches to
+3. networks this is where the application is divided maybe into backend and frentend
