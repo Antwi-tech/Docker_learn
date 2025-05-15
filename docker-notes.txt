@@ -114,3 +114,19 @@ cpu
 cmd: docker run --cpus=.5  ubuntu
 memory
 cmd: docker run --memory=100m ubuntu
+
+DOCKER STORAGE
+The dockerfile is an example of a layered architecture, each line in the Dockerfile creates a new layer or 
+adds to the existing layer
+
+match a Volume/db to a folder to preserve or persist data
+cmd: docker voulume create data_volume - creating a dir in docker contianer
+cmd: docker run -v data_volume:/var/lib/mysql mysql - matching your data to the storage you created 
+
+Types of Mounting data
+Volunme mount and Binding Mount
+
+STORAGE DRIVERS
+1. AUFS         4.Device mapper
+2. ZFS          5. Overlay
+3. BTRFS        6. Overlay2
