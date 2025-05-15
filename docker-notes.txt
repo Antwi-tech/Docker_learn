@@ -130,3 +130,8 @@ STORAGE DRIVERS
 1. AUFS         4.Device mapper
 2. ZFS          5. Overlay
 3. BTRFS        6. Overlay2
+
+SOME CMD
+docker run --name=mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -d  mysql    
+docker exec mysql-db mysql -pdb_pass123 -e 'use foo; select * from myTable'
+docker run -v /opt/data:/var/lib/mysql --name=mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 -d  mysql
