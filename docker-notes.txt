@@ -142,8 +142,10 @@ cmd: docker push docker.mycompany.com/spam:v1
 cmd:docker pull docker.mycompany.com/spam_alice:v3
 cmd: docker save -o spam_updated.tar spam:v2
 cmd: docker load -i spam_bob.tar
-cmd: docker build .
+cmd: docker build .docker build --build-arg WELCOME_TEST="Welcome!" .
+cmd: docker run --env NAME="Antwiwaa" hello_image
 cmd: docker build -t my_image .
+cmd: 
 $ touch Dockefile
 $ nano Dockerfile
 $ echo "RUN apt-get update" >> Dockerfile
@@ -154,3 +156,9 @@ $
 
 echo -e "RUN curl https://assets.datacamp.com/production/repositories/6082/datasets/31a5052c6a5424cbb8d939a7a6eff9311957e7d0/pipeline_final.zip -o /pipeline_final.zip\nRUN unzip /pipeline_final.zip\n
 RUN rm /pipeline_final.zip" >> Dockerfile
+
+DOCKERFILE INSTRUCTIONS
+FROM, RUN, COPY, WORKDIR, ARG var_name=var_value, ENV var_name=var_value CMD, ENTRYPOINT
+
+ARG - Used to change sth within the docker file at build time
+ENV - Used to change things outside the dockerfile at run time
