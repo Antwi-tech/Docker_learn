@@ -169,3 +169,23 @@ What does "reproducibility" mean when we are talking about containers?
 ans: Their output remains the same across time
 
 Docker Engine API's define interactions between clients and daemon
+
+NETWORKS CREATED WHEN DOCKER IS installed
+Bridge- Private internal network created by docker on the host. Default internal IP is 172.17.0.2
+cmd: docker run ubuntu
+None- Doesn't associate with any network 
+cmd: docker run ubuntu --network=none
+host- THis is when the imae takes up the port of the hosr
+cmd: docker run ubuntu --network=host
+
+TO CREATE ISOLATED DOCKER NETWORLS
+cmd: docker network create \
+--driver bridge \
+--subnet 182.18.0.0 \
+custom-isolated-network
+
+docker network ls
+docker inspect id
+
+To connect a webserver to a db
+cmd: mysql.connect(img_name)
