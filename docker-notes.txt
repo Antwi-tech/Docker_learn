@@ -145,7 +145,9 @@ cmd: docker load -i spam_bob.tar
 cmd: docker build .docker build --build-arg WELCOME_TEST="Welcome!" .
 cmd: docker run --env NAME="Antwiwaa" hello_image
 cmd: docker build -t my_image .
-cmd: 
+cmd: docker logs -f id - check logs of a contianer
+cmd: docker container prune - to remove all containers
+cmd: docker ps -f "name=contianer_name" - filtering running container 
 $ touch Dockefile
 $ nano Dockerfile
 $ echo "RUN apt-get update" >> Dockerfile
@@ -162,3 +164,8 @@ FROM, RUN, COPY, WORKDIR, ARG var_name=var_value, ENV var_name=var_value CMD, EN
 
 ARG - Used to change sth within the docker file at build time
 ENV - Used to change things outside the dockerfile at run time
+
+What does "reproducibility" mean when we are talking about containers?
+ans: Their output remains the same across time
+
+Docker Engine API's define interactions between clients and daemon
