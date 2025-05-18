@@ -212,3 +212,16 @@ Run a registry server with name equals to my-registry using registry:2 image wit
 and restart policy set to always.Note: Registry server is exposed on port 5000 in the image.
 
 cmd: docker run -d --name my-reistry -p 5000:500 --restart=always registry:2
+
+CONTAINER ORCHESTRATION
+This is a set of tools that help run your contianers in a production envirnment. This prevents your application 
+from crashing and saves your work even when your host crashes 
+It consists of multiple docker hosts that can hsot contianers
+cmd: docker  service create --replace=100 image
+
+SOLUTIONS
+1. Docker swarm
+3. Kuberbetes
+4. Mesos
+
+Acess to a containers process is restricted and private
