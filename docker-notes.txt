@@ -225,3 +225,18 @@ SOLUTIONS
 4. Mesos
 
 Acess to a containers process is restricted and private
+
+INTERMEDIATE DOCKER
+BIND Mount
+Attaching a file to a contianer so that data is retained 
+Volume is another way to store data using docker. Unlike bing mount it allows files to be shared amongst 
+containers and also provides a higher performance
+
+NETWORKING
+Interface- A connection of a host to a network such as Ethernet / Wifi
+Host- A computer
+Network- A group of hosts 
+IP- Method to connect between networks
+
+TO SHOW THE ADDRES OR IP OF A DOCKER IMAGE 
+cmd: ip addr show name
